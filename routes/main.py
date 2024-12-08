@@ -124,11 +124,6 @@ if __name__ == "__main__":
             start = route['start_coords']
             end = route['end_coords']
             nfs = get_route_duration(key, start, end)
-            if nfs > max_dur:
-                print(f"Длительность маршрута {depo} составляет {round(nfs / 60)} минут и превышает допустимое время {round(max_dur / 60)} минут.")
-            else:
-                print(
-                    f"Длительность маршрута {depo} составляет {round(nfs / 60)} минут и не превышает допустимое время {round(max_dur / 60)} минут.")
             response = send_route_data(backend_url, nfs, depo, start, end)
         waiting = 10
         print(f'Ожидаем {waiting} минут')

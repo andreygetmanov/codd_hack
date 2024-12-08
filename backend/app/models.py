@@ -195,3 +195,16 @@ class Bulvar(BulvarBase, table=True):
 class BulvarList(SQLModel):
     data: list[Bulvar]
     count: int
+
+
+class Events(SQLModel, table=True):
+    event_title: str
+    event_date: str
+    event_time: str
+    event_place: str
+    id_ev: int = Field(default=None, primary_key=True)
+
+
+class EventList(SQLModel):
+    data: list[Events]
+    count: int
